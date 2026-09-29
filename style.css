@@ -98,3 +98,18 @@ body {
   opacity: 0.85;
   font-size: 1.2rem;
 }
+/* Telefono */
+@media (max-width: 600px) {
+  #heart {
+    top: 38%;
+  }
+  .messaggio {
+    bottom: 4%;
+  }
+  .messaggio h1 {
+    font-size: 1.2rem;
+  }
+  .messaggio p {
+    font-size: 0.9rem;
+  }
+}
