@@ -1,0 +1,100 @@
+/* VAR */
+
+/* COLOR */
+:root {
+  --heart: #4fd138;
+  --sfondo: rgb(25, 25, 25);
+}
+
+/* RESET */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ANIMATION */
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes oscilla {
+  from {
+    transform: rotateY(-30deg);
+  }
+  to {
+    transform: rotateY(30deg);
+  }
+}
+@keyframes appare {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* HEART + BODY  */
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--sfondo);
+}
+.scena {
+  position: absolute;
+  inset: 0;
+  perspective: 800px;
+}
+#heart {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: oscilla 6s ease-in-out infinite alternate;
+}
+.love {
+  position: absolute;
+  transform: translate(-50%, -50%)
+    translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
+  font-size: 1.2rem;
+  color: var(--heart);
+  white-space: nowrap;
+  animation: pulse 2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.05s);
+}
+
+/* MESSAGGIO & DEDICA */
+.messaggio {
+  position: absolute;
+  bottom: 8%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 0 16px;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: appare 3s ease 1s forwards;
+}
+.messaggio h1 {
+  margin: 0 0 6px;
+  font-weight: normal;
+  font-size: 1.6rem;
+  color: var(--heart);
+}
+.messaggio p {
+  margin: 0;
+  opacity: 0.85;
+  font-size: 1.2rem;
+}
